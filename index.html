@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papyrusgmbh</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="wlcm" style="color: white;"></h1>
+    <h2 id="text" style="background-color: rgb(239, 219, 106); padding: 10px;"></h2>
+    <script>
+        let wlcm = "Wellcom To Papyrusgmbh !";
+        let text = "We are working on this website. for more information please contact info@papyrusgmbh.com ."
+        function writemytext(x,y){
+            const myArray = x.split("");
+        let cnt =-1;
+        const myTimeout = setInterval(myGreeting, 100);
+       
+    function myGreeting() {
+        cnt ++
+        if(cnt==myArray.length-1){
+            myStopFunction()
+        }
+        document.getElementById(y).innerHTML += myArray[cnt];
+        }
+
+    function myStopFunction() {
+        clearInterval(myTimeout);
+        }
+        }
+        writemytext(wlcm,"wlcm")
+        writemytext(text,"text")
+        
+        let r=0;
+        let g=0;
+        let b=0;
+        setInterval(changemycolor, 50);
+        function changemycolor(){
+            r++;g++;b++;
+            if(r==254){
+                b=0;
+                r=0;
+                g=0;
+            }
+            let co = "rgb("+(255-r)+","+(180-g)+","+(b)+")";
+            document.getElementById("wlcm").style.color=co
+            //document.getElementById("wlcm").style.backgroundColor="rgb("+(255-r)+", "+(255-g)+", "+(255-b)+")"
+        }
+        
+
+
+    </script>
+</body>
+</html>
